@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询页面</title>
+    <link type="text/css" rel="stylesheet" href="/public/css/main.css">
+</head>
+<body>
+<div>
+    <div class="title">
+        <span class="title-first">学生信息管理系统</span><span class="title-second">查询结果</span>
+    </div>
+    <hr style="width: 100%">
+    <div class="stu-info">
+        <table class="tab" id="tab" cellspacing="0">
+            <caption style="font-weight: bold">学生详细信息<span style="font-weight: normal">(当前共有<span id="count" style="color: red"></span>条数据)</span></caption>
+            <thead>
+            <tr>
+                <th>学&nbsp;&nbsp;号</th>
+                <th>姓&nbsp;&nbsp;名</th>
+                <th>年&nbsp;&nbsp;龄</th>
+                <th>性&nbsp;&nbsp;别</th>
+                <th>专&nbsp;&nbsp;业</th>
+                <th>联系方式</th>
+                <th>籍&nbsp;&nbsp;贯</th>
+                <th>添加日期</th>
+                <th>操&nbsp;&nbsp;作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.age }}</td>
+                <td class="gender">{{ student.gender }}</td>
+                <td>{{ student.major }}</td>
+                <td>{{ student.phone }}</td>
+                <td>{{ student.address }}</td>
+                <td>{{ student.date }}</td>
+                <td>
+                    <a href="/student/edit?id={{ student.id }}">修改</a>
+                    <a href="/student/delete?id={{ student.id }}">删除</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+<script type="text/javascript" charset="utf-8" src="/public/js/main.js"></script>
+</html>

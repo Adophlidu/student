@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息管理系统</title>
+    <link type="text/css" rel="stylesheet" href="/public/css/main.css">
+</head>
+<body>
+<div>
+    <div class="title">
+        <span class="title-first">学生信息管理系统</span><span class="title-second">吉林财经大学</span>
+    </div>
+    <hr style="width: 100%">
+    <a class="btn" href="/student/new">添加学生</a>
+    <form action="/student/search" method="get">
+        <div style="position: relative;height: 35px">
+            <input type="text" class="search-btn" name="id" placeholder="请输入学号查询"><input type="submit" value="" class="search-sub">
+        </div>
+    </form>
+    <div class="stu-info">
+        <table class="tab" id="tab" cellspacing="0">
+            <caption style="font-weight: bold">学生详细信息<span style="font-weight: normal">(当前共有<span id="count" style="color: red"></span>条数据)</span></caption>
+            <thead>
+            <tr>
+                <th>学&nbsp;&nbsp;号</th>
+                <th>姓&nbsp;&nbsp;名</th>
+                <th>年&nbsp;&nbsp;龄</th>
+                <th>性&nbsp;&nbsp;别</th>
+                <th>专&nbsp;&nbsp;业</th>
+                <th>联系方式</th>
+                <th>籍&nbsp;&nbsp;贯</th>
+                <th>添加日期</th>
+                <th>操&nbsp;&nbsp;作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{each students}}
+            <tr>
+                <td>{{ $value.id }}</td>
+                <td>{{ $value.name }}</td>
+                <td>{{ $value.age }}</td>
+                <td class="gender">{{ $value.gender }}</td>
+                <td>{{ $value.major }}</td>
+                <td>{{ $value.phone }}</td>
+                <td>{{ $value.address }}</td>
+                <td>{{ $value.date }}</td>
+                <td>
+                    <a href="/student/edit?id={{ $value.id }}">修改</a>
+                    <a href="/student/delete?id={{ $value.id }}">删除</a>
+                </td>
+            </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+<script type="text/javascript" charset="utf-8" src="/public/js/main.js"></script>
+</html>

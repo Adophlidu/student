@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加学生信息</title>
+    <link type="text/css" rel="stylesheet" href="/public/css/main.css">
+</head>
+<body>
+<div class="title">
+    <span class="title-first">学生信息管理系统</span><span class="title-second">添加学生信息</span>
+</div>
+<hr style="width: 100%">
+<form action="/student/new" method="post">
+    <div class="ipt-header"><span style="color: red">*</span>姓名</div>
+    <input type="text" name="name" class="ipt-cont" required maxlength="4" minlength="2">
+    <div class="ipt-header"><span style="color: red">*</span>年龄</div>
+    <input type="number" name="age" class="ipt-cont" required max="25" min="18">
+    <div class="ipt-header"><span style="color: red">*</span>性别</div>
+    <input type="radio" value="0" name="gender">男
+    <input type="radio" value="1" name="gender">女
+    <div class="ipt-header"><span style="color: red">*</span>专业</div>
+    <input type="text" name="major" class="ipt-cont">
+    <div class="ipt-header"><span style="color: red">*</span>联系方式</div>
+    <input type="text" name="phone" class="ipt-cont">
+    <div class="ipt-header"><span style="color: red">*</span>籍贯</div>
+    <input type="text" name="address" class="ipt-cont">
+    <div class="add-btn">
+            <input type="submit" value="提交" class="btn btn-sub">
+            <input type="reset" value="重置" class="btn btn-reset">
+    </div>
+</form>
+</body>
+</html>
